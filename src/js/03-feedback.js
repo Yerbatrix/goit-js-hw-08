@@ -1,9 +1,10 @@
 import throttle from 'lodash.throttle';
 
-const email = form.querySelector("input[name='email']");
-const message = form.querySelector("textarea[name='message']");
 const form = document.querySelector('.feedback-form');
-const btnSubmit = form.querySelector("button[type='submit']");
+const email = document.querySelector("input[name='email']");
+const message = document.querySelector("textarea[name='message']");
+
+const btnSubmit = document.querySelector("button[type='submit']");
 
 form.addEventListener(
   'input',
@@ -30,12 +31,10 @@ const getData = () => {
 
 form.addEventListener('submit', event => {
   event.preventDefault;
-
-  const userMessage = {
+  console.log({
     email: email.value,
     message: message.value,
-  };
-  console.log(userMessage);
+  });
 
   form.reset();
   localStorage.removeItem('feedback-form-state');
