@@ -9,7 +9,10 @@ form.addEventListener(
   throttle(() => {
     localStorage.setItem(
       'feedback-form-state',
-      JSON.stringify({ email: email.value, message: message.value })
+      JSON.stringify({
+        email: email.value,
+        message: message.value,
+      })
     );
   }, 500)
 );
