@@ -37,7 +37,7 @@ form.addEventListener('submit', event => {
   });
 
   form.reset();
-  localStorage.removeItem('feedback-form-state');
+  localStorage.clear();
   email.value = '';
   message.value = '';
   btnSubmit.disabled = true;
