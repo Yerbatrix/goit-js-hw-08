@@ -13,3 +13,26 @@ form.addEventListener(
     );
   }, 500)
 );
+
+function getData() {
+  const data = localStorage.getItem('feedback-form-state');
+  const dataTransition = JSON.parse(data);
+  email.value = dataTransition.email;
+  message.value = dataTransition.message;
+}
+
+form.addEventListener('submit', event => {
+  event.preventDefault;
+  const userMessage = {
+    email: 'email.value',
+    message: 'message.value',
+  };
+  console.log(userMessage);
+
+  form.reset();
+  localStorage.removeItem('feedback-form-state');
+  email.value = '';
+  message.value = '';
+});
+
+getData();
