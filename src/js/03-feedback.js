@@ -17,18 +17,21 @@ form.addEventListener(
   }, 500)
 );
 
-function getData() {
+const getData = () => {
   const data = localStorage.getItem('feedback-form-state');
-  const dataTransition = JSON.parse(data);
-  email.value = dataTransition.email;
-  message.value = dataTransition.message;
-}
+  if (data) {
+    const dataTransition = JSON.parse(data);
+    email.value = dataTransition.email;
+    message.value = dataTransition.message;
+  }
+};
 
 form.addEventListener('submit', event => {
   event.preventDefault;
+
   const userMessage = {
-    email: 'email.value',
-    message: 'message.value',
+    email: email.value,
+    message: message.value,
   };
   console.log(userMessage);
 
