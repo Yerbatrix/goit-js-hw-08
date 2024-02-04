@@ -30,7 +30,7 @@ const getData = () => {
 };
 
 form.addEventListener('submit', event => {
-  event.preventDefault;
+  event.preventDefault();
   console.log({
     email: email.value,
     message: message.value,
